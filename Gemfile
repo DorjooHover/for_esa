@@ -12,7 +12,7 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
-gem 'clearance'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -35,6 +35,7 @@ group :development, :test do
 end
 
 group :production do
+gem 'clearance', '~> 2.5'
   gem 'pg', '~> 1.2', '>= 1.2.3'
 end
 
