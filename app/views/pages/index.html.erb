@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Жагсаалт</th>
+      <th>Гүйцэтгэл</th>
+      <th>Хийсэн эсэх</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%if page.list == '' %>
+          Утга оруулаачээ
+          <%else%>
+          <%= page.list%>
+          <%end%>
+        </td>
+        <td><% if page.performance == nil%>
+        Ажлаа шаана уу
+        <% else %>
+          <%= page.performance%>%
+        <% end %>
+      </td>
+        <td><% if page.check %>
+          Хийсэн
+          <%else%> 
+          Хийгээгүй
+          <%end%>
+        </td>
+        <td><%= link_to 'Харах', page %></td>
+        <td><%= link_to 'Засах', edit_page_path(page) %></td>
+        <td><%= link_to 'Устгах', page, method: :delete, data: { confirm: 'Итгэлтэй байна уу!?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Page', new_page_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>List:</strong>
+  <%= @page.list %>
+</p>
+
+<p>
+  <strong>Performance:</strong>
+  <%= @page.performance %>
+</p>
+
+<p>
+  <strong>Check:</strong>
+  <%= @page.check %>
+</p>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>
